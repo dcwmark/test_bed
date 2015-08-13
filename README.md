@@ -25,6 +25,7 @@ TB.app.config( ['$stateProvider', '$urlRouterProvider',
                 }
             }
         } )
+        <<<===
         .state( 'app.filter-grid', {
             url: 'filter-grid',
             views: {
@@ -33,4 +34,5 @@ TB.app.config( ['$stateProvider', '$urlRouterProvider',
                 }
             }
         } );
+        <<<===
 ```
