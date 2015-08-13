@@ -44,17 +44,17 @@ TB.app.config( ['$stateProvider', '$urlRouterProvider',
     <dt>Add the controller reference to index.html</dt> 
     <dd><script src="controllers/filter-grid-ctrl.js"></script></dd>
     <dt>Add to nav bar</dt>
-    <dd>test_bed/app/templates/tb-header.html
-        &lt;li&gt;
-            &lt;a ui-sref="app.filter-grid"&gt;
-                filter-grid &lt;span class="sr-only"&gt;(current)&lt;/span&gt;
-            &lt;/a&gt;
+    <dd>test_bed/app/templates/tb-header.html<br>
+        &lt;li&gt;<br>
+        &nbsp;&nbsp;&lt;a ui-sref="app.filter-grid"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;filter-grid &lt;span class="sr-only"&gt;(current)&lt;/span&gt;<br>
+        &nbsp;&nbsp;&lt;/a&gt;<br>
         &lt;/li&gt;
     </dd>
     <dt>Add to directives/html</dt>
     <dd>test_bed/app/directives/filter-grid.html</dd>
     <dt>Add to directive/js</dt>
-    <dd>test_bed/app/directives/fileter_grid.js</dd>
+    <dd>test_bed/app/directives/filter_grid.js</dd>
     <dt>Add the directives reference to index.html</dt>
-    <dd><script src="directives/filter-grid.js"></script></dd>
+    <dd>&lt;script src="directives/filter-grid.js"&gt;&lt;/script&gt;</dd>
 </dl>
