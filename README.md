@@ -24,8 +24,8 @@ TB.app.config( ['$stateProvider', '$urlRouterProvider',
                     templateUrl: 'templates/tb-footer.html'
                 }
             }
+        // add new state ==>
         } )
-        <<<===
         .state( 'app.filter-grid', {
             url: 'filter-grid',
             views: {
@@ -34,5 +34,27 @@ TB.app.config( ['$stateProvider', '$urlRouterProvider',
                 }
             }
         } );
-        <<<===
+        // <== end new state
 ```
+<dl>
+    <dt>Add to controller/html</dt>
+    <dd>test_bed/app/controllers/filter-grid-ctrl.htm<dd>
+    <dt>Add to controller/js</dt>
+    <dd>test_bed/app/controllers/filter-grid-ctrl.js</dd>
+    <dt>Add the controller reference to index.html</dt> 
+    <dd><script src="controllers/filter-grid-ctrl.js"></script></dd>
+    <dt>Add to nav bar</dt>
+    <dd>test_bed/app/templates/tb-header.html
+        &lt;li&gt;
+            &lt;a ui-sref="app.filter-grid"&gt;
+                filter-grid &lt;span class="sr-only"&gt;(current)&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+    </dd>
+    <dt>Add to directives/html</dt>
+    <dd>test_bed/app/directives/filter-grid.html</dd>
+    <dt>Add to directive/js</dt>
+    <dd>test_bed/app/directives/fileter_grid.js</dd>
+    <dt>Add the directives reference to index.html</dt>
+    <dd><script src="directives/filter-grid.js"></script></dd>
+</dl>
