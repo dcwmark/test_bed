@@ -56,5 +56,5 @@ TB.app.config( ['$stateProvider', '$urlRouterProvider',
     <dt>Add to directive/js</dt>
     <dd>test_bed/app/directives/fileter_grid.js</dd>
     <dt>Add the directives reference to index.html</dt>
-    <dd><script src="directives/filter-grid.js"></script></dd>
+    <dd>&lt;script src="directives/filter-grid.js"&gt;&lt;/script&gt;</dd>
 </dl>
