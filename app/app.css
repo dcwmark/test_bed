@@ -1,0 +1,59 @@
+@CHARSET "ISO-8859-1";
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+}
+
+@-webkit-viewport   {
+  width: device-width;
+  height: device-height;
+}
+@-moz-viewport      {
+  width: device-width;
+  height: device-height;
+}
+@-ms-viewport       {
+  width: device-width;
+  height: device-height;
+}
+@-o-viewport        {
+  width: device-width;
+  height: device-height;
+}
+@viewport           {
+  width: device-width;
+  height: device-height;
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+}
+ 
+/* Default 980px and upto 1199px */
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+}
+
+.default-content {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.relationship-structure-grid {
+  width: auto;
+  height: auto;
+}

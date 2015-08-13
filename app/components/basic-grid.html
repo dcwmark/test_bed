@@ -1,0 +1,42 @@
+<!-- test_bed/app/components/basic-grid.html -->
+
+<dom-module id="basic-grid">
+  <template>
+    <div>
+      <span>{{owner.wtf}}</span><br>
+      <span>{{gridData}}</span><br>
+      <span>FName: {{gridData.0.firstName}}</span>
+    </div>
+  
+    <template repeat="{{each in gridData}}">
+        <span>{{each.firstName}}</span>
+    </template>
+    
+    <div id="grid1" ui-grid="{ data: gridData }" class="grid"></div>
+  </template>
+  
+  <script>
+    Polymer({
+      is: 'basic-grid',
+      ready: function() {
+        this.owner = {wtf: 'xyzzy'};
+        this.gridData = [{
+          "firstName": "Cox",
+          "lastName": "Carney",
+          "company": "Enormo",
+          "employed": true
+        }, {
+          "firstName": "Lorraine",
+          "lastName": "Wise",
+          "company": "Comveyer",
+          "employed": false
+        }, {
+          "firstName": "Nancy",
+          "lastName": "Waters",
+          "company": "Fuelton",
+          "employed": false
+        }];
+      }
+    });
+  </script>
+</dom-module>

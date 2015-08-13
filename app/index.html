@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="testApp">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1">
+  <title>Test Bed</title>
+
+  <link type="text/css" rel="stylesheet"
+        href="../vendors/bootstrap/css/bootstrap.min.css">
+  <link type="text/css" rel="stylesheet"
+        href="../vendors/angularjs/ui-grid/ui-grid.css">
+  <link type="text/css" rel="stylesheet" href="app.css">
+
+  <script src="../vendors/jquery/jquery-2.1.4.min.js"></script>
+
+  <script src="../vendors/angularjs/angular.min.js"></script>
+  <script src="../vendors/angularjs/angular-animate.min.js"></script>
+  <script src="../vendors/angularjs/angular-touch.min.js"></script>
+  <script src="../vendors/angularjs/angular-ui-router.min.js"></script>
+
+  <script src="../vendors/bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="../vendors/polymerjs/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import"
+        href="../vendors/polymerjs/polymer/polymer.html">
+
+  <script src="../vendors/angularjs/ui-grid/ui-grid.js"></script>
+
+  <script src="init.js"></script>
+  <script src="app.js"></script>
+  <script src="controllers/basic-grid-ctrl.js"></script>
+  <script src="directives/basic-grid.js"></script>
+  <script src="controllers/coldef-grid-ctrl.js"></script>
+  <script src="directives/coldef-grid.js"></script>
+  <script src="controllers/filter-grid-ctrl.js"></script>
+  <script src="directives/filter-grid.js"></script>
+</head>
+<body id="index">
+
+    <!-- test_bed/src/index.html -->
+
+    <div ui-view="header"></div>
+    <div ui-view="content"></div>
+    <div ui-view="footer"></div>
+
+</body>
+</html>
