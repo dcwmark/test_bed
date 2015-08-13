@@ -36,6 +36,9 @@ TB.app.config( ['$stateProvider', '$urlRouterProvider',
         } );
         // <== end new state
 ```
+
+###ui-grid
+
 <dl>
     <dt>Add to controller/html</dt>
     <dd>test_bed/app/controllers/filter-grid-ctrl.htm<dd>
