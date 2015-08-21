@@ -9,13 +9,26 @@ TB.app.directive( 'filterGrid', ['uiGridConstants',
       return {
         restrict: 'E',
         scope: {
-          gridData: '=gridData'
+          gridData: '='
         },
         templateUrl: 'directives/filter-grid.html',
-        link: function( scope, element, attr ) {
-          scope.gridOptions = {
-              data: 'xyzzy'
+        link: function(scope, element, attrs) {
+          
+          if ( ! scope.gridOptions ) {
+            scope.gridOptions = {};
           }
+          
+          scope.$watch('gridData', function(gridData) {
+            if ( gridData ) {
+              scope.gridOptions = {
+                  enableFiltering: true,
+                  onRegisterApi: function(gridApi) {
+                    scope.gridApi = gridApi;
+                  },
+                  data: gridData
+              }
+            }
+          });
         }
       };
     }
