@@ -35,6 +35,7 @@ TB.app.controller( 'ColdefGridCtrl', [ '$scope', 'uiGridConstants',
       }];
       
       _self.gridOptions = {
+        enableFiltering: true,
         columnDefs: [{
           field: 'firstName',
           displayName: 'First Name',

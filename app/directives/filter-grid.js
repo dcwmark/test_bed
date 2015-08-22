@@ -3,34 +3,29 @@
 **/
 
 TB.app.directive( 'filterGrid', ['uiGridConstants',
-    function(uiGridConstants) {
-      'use strict';
-      
-      return {
-        restrict: 'E',
-        scope: {
-          gridData: '='
-        },
-        templateUrl: 'directives/filter-grid.html',
-        link: function(scope, element, attrs) {
-          
-          if ( ! scope.gridOptions ) {
-            scope.gridOptions = {};
+  function(uiGridConstants) {
+    'use strict';
+    
+    return {
+      restrict: 'E',
+      scope: {
+        gridData: '='
+      },
+      templateUrl: 'directives/filter-grid.html',
+      link: function(scope, element, attrs) {
+        
+        scope.gridOptions = scope.gridOptions || {
+          enableFiltering: true
+        };
+        
+        scope.$watch('gridData', function(gridData) {
+          if ( gridData ) {
+            scope.gridOptions = {
+              data: gridData
+            };
           }
-          
-          scope.$watch('gridData', function(gridData) {
-            if ( gridData ) {
-              scope.gridOptions = {
-                  enableFiltering: true,
-                  onRegisterApi: function(gridApi) {
-                    scope.gridApi = gridApi;
-                  },
-                  data: gridData
-              }
-            }
-          });
-        }
-      };
-    }
+        });
+      }
+    };
+  }
 ] );
-
