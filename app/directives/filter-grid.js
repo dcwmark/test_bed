@@ -36,9 +36,10 @@ TB.app.directive( 'filterGrid', ['uiGridConstants',
             field: 'name',
             headerCellClass: scope.highLightFilterHeader
           }, {
-            // pre-populated search field
             field: 'gender',
             filter: {
+              // pre-populated search field
+              term: '1',
               type: uiGridConstants.filter.SELECT,
               selectOptions: [{
                 value: '1', label: 'male'
@@ -46,8 +47,30 @@ TB.app.directive( 'filterGrid', ['uiGridConstants',
                 value: '2', label: 'female'
               }]
             },
-//            cellFilter: 'mapGender',
+            cellFilter: 'mapGender',
             headerCellClass: scope.highLightFilterHeader
+          }, {
+            // no filter input but with pre-defined filtering
+            field: 'company',
+            enableFiltering: false,
+            filter: {
+              noTerm: true,
+              condition: function(searchTerm, cellValue) {
+                // select only company with 'a' in name
+                return cellValue.match(/a/);
+              }
+            }
+          }, {
+            // specifies one of the built-in conditions
+            // and a placeholder for the input
+            field: 'email',
+            filter: {
+              condition: uiGridConstants.filter.ENDS_WITH,
+              placeholder: 'ends with'
+            },
+            headerCellClass: scope.highLightFilterHeader
+          }, {
+            field: 'phone'
           }]
         };
         

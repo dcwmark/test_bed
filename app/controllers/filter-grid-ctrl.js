@@ -12,6 +12,11 @@ TB.app.controller( 'FilterGridCtrl', [ '$scope', '$http',
     
     $http.get('../app/data/500_complex.json')
       .success(function(data) {
+        
+        data.forEach(function(row, index) {
+          row.gender = row.gender === 'male' ? '1' : '2';
+        });
+        
         _self.gridData = data;
       });
   }
