@@ -15,9 +15,11 @@ TB.app.controller( 'FilterGridCtrl', [ '$scope', '$http',
         
         data.forEach(function(row, index) {
           row.gender = row.gender === 'male' ? '1' : '2';
+          row.mixedDate = new Date( new Date().getTime() * Math.random() );
         });
         
         _self.gridData = data;
+        
       });
   }
 ] );

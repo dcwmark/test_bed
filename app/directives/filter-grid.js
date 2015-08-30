@@ -6,6 +6,9 @@ TB.app.directive( 'filterGrid', ['uiGridConstants',
   function(uiGridConstants) {
     'use strict';
     
+    var nextWeek = new Date();
+    nextWeek.setDate(nextWeek.getDate() + 7);
+    
     return {
       restrict: 'E',
       scope: {
@@ -30,7 +33,10 @@ TB.app.directive( 'filterGrid', ['uiGridConstants',
           enableFiltering: true,
           columnDefs: [{
             field: 'id',
-            width: '4%'
+            width: '4%',
+            sortingAlgorithm: function(a, b) {
+              return a - b;
+            }
           }, {
             // default
             field: 'name',
@@ -48,6 +54,7 @@ TB.app.directive( 'filterGrid', ['uiGridConstants',
               }]
             },
             cellFilter: 'mapGender',
+            width: '8%',
             headerCellClass: scope.highLightFilterHeader
           }, {
             // no filter input but with pre-defined filtering
@@ -70,7 +77,44 @@ TB.app.directive( 'filterGrid', ['uiGridConstants',
             },
             headerCellClass: scope.highLightFilterHeader
           }, {
-            field: 'phone'
+            // custom condition function
+            field: 'phone',
+            filter: {
+              condition: function(searchTerm, cellValue) {
+                var strippedValue = (cellValue + '').replace(/[^\d]/g, '');
+                return strippedValue.indexOf(searchTerm) >= 0;
+              }
+            },
+            headerCellClass: scope.highLightFilterHeader
+          }, {
+            // multiple filters
+            field: 'age',
+            filters: [{
+              condition: uiGridConstants.filter.CREATER_THAN,
+              placeholder: 'greater than'
+            }, {
+              condition: uiGridConstants.filter.LESS_THAN,
+              placeholder: 'less than'
+            }],
+            headerCellClass: scope.highLightFilterHeader
+          }, {
+            // date filters
+            field: 'mixedDate',
+            cellFilter: 'date',
+            width: '15%',
+            filter: {
+              condition: uiGridConstants.filter.LESS_THAN,
+              placeholder: 'less than',
+              term: nextWeek
+            },
+            headerCellClass: scope.highLightFilterHeader
+          }, {
+            // date filters
+            field: 'mixedDate',
+            displayName: 'Long Date',
+            cellFilter: 'date:"longDate"',
+            filterCellFiltered: true,
+            width: '15%'
           }]
         };
         
