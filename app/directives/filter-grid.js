@@ -30,7 +30,11 @@ TB.app.directive( 'filterGrid', ['uiGridConstants',
           onRegisterApi: function(gridApi) {
             scope.gridApi = gridApi;
           },
+          enableGridMenu: true,
+          exporterMenuCsv: true,
           enableFiltering: true,
+          showGridFooter: true,
+          showColumnFooter: true,
           columnDefs: [{
             field: 'id',
             width: '4%',
@@ -89,6 +93,7 @@ TB.app.directive( 'filterGrid', ['uiGridConstants',
           }, {
             // multiple filters
             field: 'age',
+            width: '8%',
             filters: [{
               condition: uiGridConstants.filter.CREATER_THAN,
               placeholder: 'greater than'
