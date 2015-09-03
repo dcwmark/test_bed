@@ -17,7 +17,7 @@ TB.app.config( ['$stateProvider', '$urlRouterProvider',
                 'header': { 
                     templateUrl: 'templates/tb-header.html'
                 },
-                content': { 
+                'content': { 
                     templateUrl: 'templates/tb-content.html'
                 },
                 'footer': { 
